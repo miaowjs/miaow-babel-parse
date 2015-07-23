@@ -1,7 +1,7 @@
 {
   "name": "miaow-babel-parse",
   "description": "Miaow的Babel编译工具,只是对Babel进行简单封装",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": "miaowjs/miaow-babel-parse",
   "author": {
     "name": "anhulife",
@@ -15,11 +15,15 @@
     "jsx"
   ],
   "dependencies": {
-    "babel-core": "~5.6.7"
+    "babel-core": "~5.6.7",
+    "miaow-util": "~0.4.0"
   },
   "devDependencies": {
-    "miaow": "~1.1.0",
+    "miaow": "^2.4.1",
     "mocha": "^2.2.4"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
   "engines": {
     "node": ">=0.10"
