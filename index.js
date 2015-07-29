@@ -5,7 +5,7 @@ var pkg = require('./package.json');
 
 function parse(option, cb) {
   var contents = this.contents.toString();
-  if (!contents.length) {
+  if (!contents.trim()) {
     return cb();
   }
 
