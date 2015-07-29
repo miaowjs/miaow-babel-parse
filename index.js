@@ -4,7 +4,12 @@ var babel = require('babel-core');
 var pkg = require('./package.json');
 
 function parse(option, cb) {
-  this.contents = new Buffer(babel.transform(this.contents.toString(), option).code);
+  var contents = this.contents.toString();
+  if (!contents.length) {
+    return cb();
+  }
+
+  this.contents = new Buffer(babel.transform(contents, option).code);
   cb();
 }
 
