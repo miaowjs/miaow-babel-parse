@@ -1,7 +1,7 @@
 {
   "name": "miaow-babel-parse",
   "description": "Miaow的Babel编译工具,只是对Babel进行简单封装",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "repository": "miaowjs/miaow-babel-parse",
   "author": {
     "name": "anhulife",
