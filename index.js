@@ -1,16 +1,23 @@
-var mutil = require('miaow-util');
 var babel = require('babel-core');
 
 var pkg = require('./package.json');
 
-function parse(option, cb) {
-  var contents = this.contents.toString();
+module.exports = function(options, callback) {
+  var context = this;
+  var contents = context.contents.toString();
   if (!contents.trim()) {
-    return cb();
+    return callback();
   }
 
-  this.contents = new Buffer(babel.transform(contents, option).code);
-  cb();
+  try {
+    context.contents = new Buffer(babel.transform(contents, options).code);
+  } catch (err) {
+    return callback(err);
+  }
+
+  callback();
 }
 
-module.exports = mutil.plugin(pkg.name, pkg.version, parse);
+module.exports.toString = function() {
+  return [pkg.name, pkg.version].join('@');
+};
