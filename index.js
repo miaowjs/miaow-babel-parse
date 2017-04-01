@@ -1,4 +1,5 @@
 var babel = require('babel-core');
+var path = require('path');
 
 var pkg = require('./package.json');
 
@@ -9,14 +10,20 @@ module.exports = function(options, callback) {
     return callback();
   }
 
+  options = Object.assign({
+    extends: path.resolve(__dirname, '.babelrc'),
+    ast: false,
+  }, options);
+
   try {
-    context.contents = new Buffer(babel.transform(contents, options).code);
+    var result = babel.transform(contents, options);
+    context.contents = new Buffer(result.code);
   } catch (err) {
     return callback(err);
   }
 
-  callback();
-}
+  return callback();
+};
 
 module.exports.toString = function() {
   return [pkg.name, pkg.version].join('@');

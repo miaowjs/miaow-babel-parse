@@ -1,16 +1,14 @@
-export default React.createClass({
-  getInitialState() {
-    return {num: this.getRandomNumber()};
-  },
+import path from 'path';
 
-  getRandomNumber(): number {
-    return Math.ceil(Math.random() * 6);
-  },
+// ES2015
+const hello = name => `hello, ${name}`;
 
-  render(): any {
-    return <div>
-      Your dice roll:
-      {this.state.num}
-    </div>;
-  }
-});
+// ES2016
+const cubed = 2 ** 3;
+
+// ES2017
+async function foo() {
+  await bar();
+}
+
+export default hello;
