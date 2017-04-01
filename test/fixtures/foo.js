@@ -1,5 +1,8 @@
 import path from 'path';
 
+// jsx
+const helloInJsx = ({ name }) => <div>hello, {name}</div>;
+
 // ES2015
 const hello = name => `hello, ${name}`;
 

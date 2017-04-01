@@ -29,6 +29,6 @@ describe('miaow-babel-parse', function() {
   });
 
   it('自动补全', function() {
-    assert.equal(find(log.modules, {src: 'foo.js'}).destHash, '826e1b6c0a28d4e25ac4acf259a50d34');
+    assert.equal(find(log.modules, {src: 'foo.js'}).destHash, '363953e563c53a5ee39c3f4cd5b6553b');
   });
 });
